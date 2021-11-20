@@ -1,5 +1,5 @@
-function CatCard(props) {
-    const {name,alt,species,favFoods,birthYear,photo} = props
+function CatCard({ name, alt, species, favFoods, birthYear, photo }) {
+
     return (
         <div className="card">
             <h3 className="card__text card__header"> {name} </h3>
