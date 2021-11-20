@@ -137,7 +137,7 @@ function App() {
       "alt": "A dopey looking Siamese cat with its tongue sticking out"
     }
   ])
-  console.log("Our pretties 😻: ", cats)
+
   return (
     <>
       <Navbar />
@@ -145,9 +145,14 @@ function App() {
 
       <main>
         <div className="cards__wrapper">
-          {cats.map(cat => {
+{/*           {cats.map(cat => {
             return <CatCard name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
+          })} */}
+
+          {cats.map(cat => {
+            return <CatCard catObject={cat} />
           })}
+
         </div>
       </main>
 
