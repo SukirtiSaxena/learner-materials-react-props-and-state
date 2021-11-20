@@ -146,7 +146,7 @@ function App() {
       <main>
         <div className="cards__wrapper">
 
-          {/* And here! */}
+          {<CatCard/>}
 
         </div>
       </main>
