@@ -3,9 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import CatCard from './components/CatCard';
 import { v4 as uuidv4 } from 'uuid';
-import DogCard from './components/DogCard';
+import Card from './components/Cards';
 
 function App() {
   const [dogs, setDogs] = useState([
@@ -194,14 +193,13 @@ function App() {
       <main>
         <div className="cards__wrapper">
           {cats.map(cat => {
-            return <CatCard key={cat.id} name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
+            return <Card key={cat.id} name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
           })}
 
         </div>
         <div className="cards__wrapper">
-          {dogs.map(dog => {
-            return <DogCard key={dog.id} dogObject={dog} />
-
+        {dogs.map(dog => {
+            return <Card key={dog.id} name={dog.name} species={dog.species} favFoods={dog.favFoods} birthYear={dog.birthYear} photo={dog.photo} alt={dog.alt} />
           })}
         </div>
       </main>

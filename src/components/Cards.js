@@ -1,4 +1,4 @@
-function CatCard({ name, alt, species, favFoods, birthYear, photo }) {
+function Card({ name, alt, species, favFoods, birthYear, photo }) {
 
     return (
         <div className="card">
@@ -11,4 +11,4 @@ function CatCard({ name, alt, species, favFoods, birthYear, photo }) {
     )
 }
 
-export default CatCard
+export default Card
