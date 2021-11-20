@@ -145,9 +145,9 @@ function App() {
 
       <main>
         <div className="cards__wrapper">
-
-          {cats.map(cat => <CatCard/>)}
-
+          {cats.map(cat => {
+            return <CatCard name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
+          })}
         </div>
       </main>
 
