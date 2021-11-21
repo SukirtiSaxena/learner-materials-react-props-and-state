@@ -5,8 +5,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { v4 as uuidv4 } from 'uuid';
 import Card from './components/Cards';
+import Form from './components/Form';
+
 
 function App() {
+
   const [dogs, setDogs] = useState([
     {
       "name": "Floofus",
@@ -185,7 +188,15 @@ function App() {
   ])
   const catCount = cats.length
   const dogCount = dogs.length
+
+  const newCat = (cat) => {
+    setCats((prevCats) => {
+      return [{...cat}, ...prevCats];
+    })
+  }
+
   return (
+
     <>
       <Navbar />
       <Header catCount={catCount} dogCount={dogCount} />
@@ -193,19 +204,20 @@ function App() {
       <main>
         <div className="cards__wrapper">
           {cats.map(cat => {
-            return <Card key={cat.id} name={cat.name} species={cat.species} favFoods={cat.favFoods.join(", ")} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
+            return <Card key={cat.id} name={cat.name} species={cat.species} favFoods={cat.favFoods} birthYear={cat.birthYear} photo={cat.photo} alt={cat.alt} />
           })}
 
         </div>
         <div className="cards__wrapper">
-        {dogs.map(dog => {
+          {dogs.map(dog => {
             return <Card key={dog.id} name={dog.name} species={dog.species} favFoods={dog.favFoods.join(", ")} birthYear={dog.birthYear} photo={dog.photo} alt={dog.alt} />
           })}
         </div>
       </main>
-
+      <Form newCat={newCat}/>
       <Footer />
     </>
+
   );
 }
 
