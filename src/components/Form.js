@@ -4,7 +4,7 @@ function Form({ newCat }) {
     const [name, setName] = useState('');
     const [species, setSpecies] = useState('');
     const [birthYear, setbirthYear] = useState('');
-    const [food, setfood] = useState('');
+    const [favFoods, setfood] = useState('');
     const [photo, setPhoto] = useState('');
     const [desc, setDesc] = useState('');
 
@@ -14,7 +14,7 @@ function Form({ newCat }) {
             name,
             species,
             birthYear,
-            food,
+            favFoods,
             photo,
             desc
         });
@@ -30,7 +30,7 @@ function Form({ newCat }) {
     const handleName = (event) => { setName(event.target.value) }
     const handleSpecies = (event) => { setSpecies(event.target.value) }
     const handleBirthYear = (event) => { setbirthYear(event.target.value) }
-    const handleFood = (event) => { setfood(event.target.value) }
+    const handlefavFoods = (event) => { setfood(event.target.value) }
     const handlePhoto = (event) => { setPhoto(event.target.value) }
     const handleDesc = (event) => { setDesc(event.target.value) }
 
@@ -51,8 +51,8 @@ function Form({ newCat }) {
                     <input type="text" id="birthYear" name="birthYear" value={birthYear} size="100" placeholder="Birth Year.." onChange={handleBirthYear} />
                 </div>
                 <div>
-                    <label for="food">Favourite Food</label>
-                    <input type="text" id="food" name="food" size="100" value={food} placeholder="Favourite Food.." onChange={handleFood} />
+                    <label for="favFoods">Favourite Food</label>
+                    <input type="text" id="favFoods" name="favFoods" size="100" value={favFoods} placeholder="Favourite Food.." onChange={handlefavFoods} />
                 </div>
                 <div>
                     <label for="photo">photo</label>

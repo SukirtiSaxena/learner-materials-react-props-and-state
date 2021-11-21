@@ -191,7 +191,7 @@ function App() {
 
   const newCat = (cat) => {
     setCats((prevCats) => {
-      return [{...cat}, ...prevCats];
+      return [{ ...cat }, ...prevCats];
     })
   }
 
@@ -214,7 +214,7 @@ function App() {
           })}
         </div>
       </main>
-      <Form newCat={newCat}/>
+      <Form newCat={newCat} />
       <Footer />
     </>
 
