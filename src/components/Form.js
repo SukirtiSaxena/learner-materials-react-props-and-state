@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 function Form({ newCat }) {
 
     const [name, setName] = useState('');
@@ -7,6 +9,7 @@ function Form({ newCat }) {
     const [favFoods, setfood] = useState('');
     const [photo, setPhoto] = useState('');
     const [desc, setDesc] = useState('');
+    const id = uuidv4();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,19 +19,13 @@ function Form({ newCat }) {
             birthYear,
             favFoods,
             photo,
-            desc
+            desc,
+            id
         });
-
-        setName('')
-        setSpecies('')
-        setbirthYear('')
-        setfood('')
-        setPhoto('')
-        setDesc('')
+        setSpecies('');
     }
 
     const handleName = (event) => { setName(event.target.value) }
-    const handleSpecies = (event) => { setSpecies(event.target.value) }
     const handleBirthYear = (event) => { setbirthYear(event.target.value) }
     const handlefavFoods = (event) => { setfood(event.target.value) }
     const handlePhoto = (event) => { setPhoto(event.target.value) }
@@ -39,27 +36,27 @@ function Form({ newCat }) {
             <h3>Do you want to add your favourite Cat?</h3>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" value={name} size="100" placeholder="Name.." onChange={handleName} />
                 </div>
                 <div>
-                    <label for="species">species</label>
-                    <input type="text" id="species" name="speciese" value={species} size="100" placeholder="species.." onChange={handleSpecies} />
+                    <label htmlFor="species">species</label>
+                    <input type="text" id="species" name="species" defaultValue="Cat" size="100" placeholder="species.." readOnly />
                 </div>
                 <div>
-                    <label for="birthYear">Birth Year</label>
+                    <label htmlFor="birthYear">Birth Year</label>
                     <input type="text" id="birthYear" name="birthYear" value={birthYear} size="100" placeholder="Birth Year.." onChange={handleBirthYear} />
                 </div>
                 <div>
-                    <label for="favFoods">Favourite Food</label>
+                    <label htmlFor="favFoods">Favourite Food</label>
                     <input type="text" id="favFoods" name="favFoods" size="100" value={favFoods} placeholder="Favourite Food.." onChange={handlefavFoods} />
                 </div>
                 <div>
-                    <label for="photo">photo</label>
+                    <label htmlFor="photo">photo</label>
                     <input type="text" id="photo" name="photo" size="100" value={photo} placeholder="Photo.." onChange={handlePhoto} />
                 </div>
                 <div>
-                    <label for="desc">Image Description</label>
+                    <label htmlFor="desc">Image Description</label>
                     <input type="text" id="desc" name="desc" size="100" value={desc} placeholder="Image Description.." onChange={handleDesc} />
                 </div>
                 <input type="submit" value="Submit" />

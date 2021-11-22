@@ -186,6 +186,7 @@ function App() {
       "id": uuidv4()
     }
   ])
+
   const catCount = cats.length
   const dogCount = dogs.length
 
@@ -196,7 +197,6 @@ function App() {
   }
 
   return (
-
     <>
       <Navbar />
       <Header catCount={catCount} dogCount={dogCount} />
