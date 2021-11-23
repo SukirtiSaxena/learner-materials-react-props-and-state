@@ -17,7 +17,7 @@ function Form({ newCat }) {
             name,
             species,
             birthYear,
-            favFoods,
+            favFoods: [],
             photo,
             desc,
             id
@@ -49,7 +49,7 @@ function Form({ newCat }) {
                 </div>
                 <div>
                     <label htmlFor="favFoods">Favourite Food</label>
-                    <input type="text" id="favFoods" name="favFoods" size="100" value={favFoods} placeholder="Favourite Food.." onChange={handlefavFoods} />
+                    <input type="text" id="favFoods" name="favFoods" size="100" value={[favFoods]} placeholder="Favourite Food.." onChange={handlefavFoods} />
                 </div>
                 <div>
                     <label htmlFor="photo">photo</label>
