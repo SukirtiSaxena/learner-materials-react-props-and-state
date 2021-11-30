@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 function Form({ newCat }) {
 
     const [name, setName] = useState('');
-    const [species, setSpecies] = useState('');
     const [birthYear, setbirthYear] = useState('');
     const [favFoods, setfood] = useState('');
     const [photo, setPhoto] = useState('');
@@ -15,19 +14,18 @@ function Form({ newCat }) {
         event.preventDefault();
         newCat({
             name,
-            species,
+            species : "cat",
             birthYear,
-            favFoods: [],
+            favFoods,
             photo,
             desc,
             id
         });
-        setSpecies('');
     }
 
     const handleName = (event) => { setName(event.target.value) }
     const handleBirthYear = (event) => { setbirthYear(event.target.value) }
-    const handlefavFoods = (event) => { setfood(event.target.value) }
+    const handlefavFoods = (event) => { setfood([event.target.value]) }
     const handlePhoto = (event) => { setPhoto(event.target.value) }
     const handleDesc = (event) => { setDesc(event.target.value) }
 
